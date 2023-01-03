@@ -3,11 +3,11 @@ env:
   MANIFEST_BRANCH: 13.0
   DEVICE: spes
   OEM: xiaomi
-  DT_LINK: https://github.com/sakshiagrwal/android_device_xiaomi_spes.git -b lineage-20.0
+  DT_LINK: https://github.com/sakshiagrwal/android_device_xiaomi_spes.git -b jb13.0
   DT_PATH: device/$OEM/$DEVICE
-  VT_LINK: https://github.com/sakshiagrwal/android_vendor_xiaomi_spes.git -b lineage-20.0
+  VT_LINK: https://github.com/sakshiagrwal/android_vendor_xiaomi_spes.git -b jb13.0
   VT_PATH: vendor/$OEM/$DEVICE
-  KT_LINK: https://github.com/sakshiagrwal/android_kernel_xiaomi_spes.git -b lineage-20.0
+  KT_LINK: https://github.com/sakshiagrwal/android_kernel_xiaomi_spes.git -b jb13.0
   KT_PATH: kernel/$OEM/$DEVICE
   LUNCH_COMBO: lineage_spes-user
   TARGET: bacon
@@ -24,7 +24,7 @@ env:
 
 task:
   name: "crDroid Build"
-  timeout_in: 240m
+  timeout_in: 2h
   container:
     image: apon77/aosp:cirrus
     cpu: 8
