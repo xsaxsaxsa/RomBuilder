@@ -1,0 +1,41 @@
+env:
+  MANIFEST: https://github.com/LineageOS/android.git
+  MANIFEST_BRANCH: lineage-20.0
+  DEVICE: spes
+  OEM: xiaomi
+  DT_LINK: https://github.com/sakshiagrwal/android_device_xiaomi_spes.git -b lineage-20.0
+  DT_PATH: device/$OEM/$DEVICE
+  VT_LINK: https://github.com/sakshiagrwal/android_vendor_xiaomi_spes.git -b lineage-20.0
+  VT_PATH: vendor/$OEM/$DEVICE
+  KT_LINK: https://github.com/sakshiagrwal/android_kernel_xiaomi_spes.git -b lineage-20.0
+  KT_PATH: kernel/$OEM/$DEVICE
+  LUNCH_COMBO: lineage_spes-user
+  TARGET: bacon
+  OUTPUT: lineage*.zip
+
+  # Not Recommended to Change
+  SYNC_PATH: $HOME/work # Do NOT use "~". Use $HOME instead.
+  CCACHE_SIZE: 30G
+  CCACHE_DIR: $HOME/work/.ccache
+  J_VAL: 16
+
+  # Cirrus Specific Vars (Do *NOT* Change)
+  CIRRUS_SHELL: bash
+
+task:
+  name: "Lineage Build"
+  timeout_in: 240m
+  container:
+    image: apon77/aosp:cirrus
+    cpu: 8
+    memory: 32G
+
+  Sync_script:
+    - bash sync.sh
+
+  Build_script:
+    - bash build.sh
+
+  Upload_script:
+    - export TIMEOUT=43200 # Download Link Timeout (in Minutes)
+    - bash upload.sh
