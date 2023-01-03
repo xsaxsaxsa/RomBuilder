@@ -1,6 +1,6 @@
 env:
-  MANIFEST: https://github.com/LineageOS/android.git
-  MANIFEST_BRANCH: lineage-20.0
+  MANIFEST: https://github.com/crdroidandroid/android.git
+  MANIFEST_BRANCH: 13.0
   DEVICE: spes
   OEM: xiaomi
   DT_LINK: https://github.com/sakshiagrwal/android_device_xiaomi_spes.git -b lineage-20.0
@@ -11,7 +11,7 @@ env:
   KT_PATH: kernel/$OEM/$DEVICE
   LUNCH_COMBO: lineage_spes-user
   TARGET: bacon
-  OUTPUT: lineage*.zip
+  OUTPUT: crDroidAndroid*.zip
 
   # Not Recommended to Change
   SYNC_PATH: $HOME/work # Do NOT use "~". Use $HOME instead.
@@ -23,7 +23,7 @@ env:
   CIRRUS_SHELL: bash
 
 task:
-  name: "Lineage Build"
+  name: "crDroid Build"
   timeout_in: 240m
   container:
     image: apon77/aosp:cirrus
