@@ -30,6 +30,11 @@ task:
     cpu: 8
     memory: 32G
 
+  Storage_Checker:
+    - df -h
+    - lsblk
+    - ls -l -a -h
+
   Sync_script:
     - bash sync.sh
 
