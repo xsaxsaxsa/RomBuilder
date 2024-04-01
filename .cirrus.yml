@@ -1,6 +1,6 @@
 env:
-  MANIFEST: https://github.com/PixelOS-AOSP/manifest.git
-  MANIFEST_BRANCH: fourteen
+  MANIFEST: https://github.com/crdroidandroid/android.git
+  MANIFEST_BRANCH: 14.0
   DEVICE: RMX1821
   OEM: realme
   DT_LINK: https://github.com/realme3-devs/android_device_realme_RMX1821.git -b PixelOS
@@ -9,9 +9,9 @@ env:
   VT_PATH: vendor/$OEM/$DEVICE
   KT_LINK: https://github.com/realme3-devs/android_kernel_realme_RMX1821.git -b PixelOS
   KT_PATH: kernel/$OEM/$DEVICE
-  LUNCH_COMBO: lunch aosp_RMX1821-user
+  LUNCH_COMBO: lineage_RMX1821-user
   TARGET: bacon
-  OUTPUT: PixelOS*.zip
+  OUTPUT: crDroidAndroid*.zip
 
   # Not Recommended to Change
   SYNC_PATH: $HOME/work # Do NOT use "~". Use $HOME instead.
@@ -23,7 +23,7 @@ env:
   CIRRUS_SHELL: bash
 
 task:
-  name: "PixelOS Builds"
+  name: "crDroid Builds"
   timeout_in: 2h
   container:
     image: apon77/aosp:cirrus
