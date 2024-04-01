@@ -1,17 +1,17 @@
 env:
-  MANIFEST: https://github.com/crdroidandroid/android.git
-  MANIFEST_BRANCH: 13.0
-  DEVICE: spes
-  OEM: xiaomi
-  DT_LINK: https://github.com/sakshiagrwal/android_device_xiaomi_spes.git -b jb13.0
+  MANIFEST: https://github.com/PixelOS-AOSP/manifest.git
+  MANIFEST_BRANCH: fourteen
+  DEVICE: RMX1821
+  OEM: realme
+  DT_LINK: https://github.com/realme3-devs/android_device_realme_RMX1821.git -b PixelOS
   DT_PATH: device/$OEM/$DEVICE
-  VT_LINK: https://github.com/sakshiagrwal/android_vendor_xiaomi_spes.git -b jb13.0
+  VT_LINK: https://github.com/realme3-devs/android_vendor_realme_rmx1821.git -b 13
   VT_PATH: vendor/$OEM/$DEVICE
-  KT_LINK: https://github.com/sakshiagrwal/android_kernel_xiaomi_spes.git -b jb13.0
+  KT_LINK: https://github.com/realme3-devs/android_kernel_realme_RMX1821.git -b PixelOS
   KT_PATH: kernel/$OEM/$DEVICE
-  LUNCH_COMBO: lineage_spes-user
+  LUNCH_COMBO: lunch aosp_RMX1821-user
   TARGET: bacon
-  OUTPUT: crDroidAndroid*.zip
+  OUTPUT: PixelOS*.zip
 
   # Not Recommended to Change
   SYNC_PATH: $HOME/work # Do NOT use "~". Use $HOME instead.
@@ -23,7 +23,7 @@ env:
   CIRRUS_SHELL: bash
 
 task:
-  name: "crDroid Builds"
+  name: "PixelOS Builds"
   timeout_in: 2h
   container:
     image: apon77/aosp:cirrus
